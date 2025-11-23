@@ -20,7 +20,6 @@
 		"bluetooth",
 		"network",
 		"backlight",
-		"wireplumber",
 		"battery",
 		"custom/power"
 	],
@@ -187,7 +186,7 @@
 	"backlight": {
 		"format": "{icon}  {percent}%",
 		"format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
-		"tooltip": false 
+		"tooltip": false
 	},
 
 	"battery": {
@@ -201,9 +200,24 @@
 		"format-charging": "{capacity}% ",
 		"format-plugged": "{capacity}% ",
 		"format-alt": "{time} {icon}",
+		// "format-good": "", // An empty format will hide the module
+		// "format-full": "",
 		"format-icons": ["", "", "", "", ""]
 	},
-
+	"battery#bat2": {
+		"bat": "BAT2"
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
 	"network": {
 		"format-wifi": "󰤢",
 		"format-ethernet": "󰈀 ",
@@ -214,12 +228,14 @@
 
 	},
 
-	"wireplumber": {
-		"scroll-step": 5,
-		"format": "{icon} {volume}%",
-		"format-bluetooth": "{icon} {volume}% ",
-		"format-bluetooth-muted": " {icon}",
-		"format-muted": "",
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
@@ -227,28 +243,21 @@
 			"phone": "",
 			"portable": "",
 			"car": "",
-			"default": [" :", " :", " :"]
+			"default": ["", "", ""]
 		},
-		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"on-click-right": "pavucontrol"
-	},
-
-	"bluetooth": {
-		"format": "󰂲",
-		"format-on": "{icon}",
-		"format-off": "{icon}", 
-		"format-connected":"{icon}",
-		"format-icons":{
-			"on":"󰂯",
-			"off": "󰂲",
-			"connected": "󰂱"
-		},
-		"on-click": "blueman-manager",
-		"tooltip-format-connected":"{device_enumerate}"
+		"on-click": "pavucontrol"
 	},
 
 	"custom/power": {
 		"format" : "⏻ ",
-		"tooltip": false
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
 	}
 }
