@@ -33,24 +33,24 @@ window#waybar.empty #window {
 
 /* configuring the modules */
 .modules-left {
-  margin: 10px 0 0 10px;
-  padding: 1px 5px 1px 5px;
+  margin: 7px 0 0 7px;
+  padding: 1px 3px 1px 3px;
   background-color: @background;
   border: 2px solid @focused;
   border-radius:3px;
 }
 
 .modules-center {
-  margin: 10px 0 0 0;
-  padding: 0 10px 0 10px;
+  margin: 7px 0 0 7px;
+  padding: 1px 3px 1px 3px;
   background-color: @background;
   border: 2px solid @focused;
   border-radius:3px;
 }
 
 .modules-right {
-  margin: 10px 10px 0 0;
-  padding: 0 10px 0 10px;
+  margin: 7px 0 0 7px;
+  padding: 1px 3px 1px 3px;
   background-color: @background;
   border: 2px solid @focused;
   border-radius:3px;
