@@ -1,0 +1,3 @@
+*{ 
+		wallpaperPath:url( "/home/goku/Wallpapers/" ,height);
+} 
