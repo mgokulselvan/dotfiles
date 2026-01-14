@@ -19,5 +19,8 @@ vim.opt.textwidth = 50
 
 vim.opt.syntax = "on"
 
-
 require("config.lazy")
+
+-- Set the colorscheme
+--vim.cmd("colorscheme tokyonight")
+

@@ -1,14 +1,12 @@
-	@define-color background #2C2A24;
-	@define-color second-background #3A372F;
-	@define-color text #DDD5C4;
-	@define-color borders #88c0d0;
-	@define-color focused #D08B57;
-	@define-color focused2 #BFAA80;
-	@define-color color1 #7699A3;
-	@define-color color2 #8D7AAE;
-	@define-color color3 #78997A;
-	@define-color urgent #B05A5A;
+@define-color background	rgba(40, 42, 54, 0.5);
+@define-color orange	#ffb86c;
+@define-color gray	#44475a;
+@define-color black #21222c;
+@define-color red	#ff5555;
 
+
+@define-color focused @gray;
+@define-color critical	@red;
 * {
     /* `otf-font-awesome` `ttf-jetbrains-mono` is required to be installed for icons */
     font-family: FontAwesome, "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
@@ -41,7 +39,7 @@ window#waybar.empty #window {
 }
 
 .modules-center {
-  margin: 7px 0 0 7px;
+  margin: 7px 0 0 0;
   padding: 1px 3px 1px 3px;
   background-color: @background;
   border: 2px solid @focused;
@@ -49,7 +47,7 @@ window#waybar.empty #window {
 }
 
 .modules-right {
-  margin: 7px 0 0 7px;
+  margin: 7px 7px 0 0;
   padding: 1px 3px 1px 3px;
   background-color: @background;
   border: 2px solid @focused;
