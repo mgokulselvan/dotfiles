@@ -1,4 +1,3 @@
-@import "wallpaperPath.rasi"
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run,filebrowser,window";
@@ -52,7 +51,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:			 @wallpaperPath;
+    background-image:			 url("~/.config/rofi/wallpaper",height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
