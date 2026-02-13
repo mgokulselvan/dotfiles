@@ -11,3 +11,5 @@ export LS_COLORS="no=38;5;255:fi=38;5;255:di=38;5;245:ln=38;5;240:pi=38;5;240:so
 unalias ls 2>/dev/null
 alias ls='command ls --color=auto'
 # End of lines configured by zsh-newuser-install
+
+source ~/.zshrc.env
