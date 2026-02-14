@@ -13,7 +13,9 @@ vim.opt.autoindent = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = true
+vim.opt.textwidth = 0
+vim.opt.formatoptions:remove("t")
+vim.opt.wrap = false 
 
 vim.opt.textwidth = 50
 
