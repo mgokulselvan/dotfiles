@@ -14,7 +14,8 @@
 		"temperature"
 	],
 	"modules-center": [
-		"clock"
+		"clock",
+		"custom/notification"
 	],
 	"modules-right": [
 		"bluetooth",
@@ -182,6 +183,12 @@
 		"tooltip": false,
 		"format": "{:%H:%M  %A,%d}",
 		"interval": 1
+	},
+	"custom/notification":{
+		"format" : "  󰂚 ",
+		"tooltip": true,
+		"tooltip-format": "Notifications",
+		"on-click":"swaync-client -t"
 	},
 
 	"backlight": {
