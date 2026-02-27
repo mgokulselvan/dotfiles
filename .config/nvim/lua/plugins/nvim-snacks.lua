@@ -90,6 +90,14 @@ return{
     { "gao", function() Snacks.picker.lsp_outgoing_calls() end, desc = "C[a]lls Outgoing" },
     { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+	{ "K", function() vim.lsp.buf.hover() end, desc = "Hover" },
+	{ "<leader>rn", function() vim.lsp.buf.rename() end, desc = "Rename" },
+	{ "<leader>ca", function() vim.lsp.buf.code_action() end, desc = "Code Action" },
+	{ "gl", function() vim.diagnostic.open_float() end, desc = "Line Diagnostic" },
+	{ "]d", function() vim.diagnostic.goto_next() end, desc = "Next Diagnostic" },
+	{ "[d", function() vim.diagnostic.goto_prev() end, desc = "Prev Diagnostic" },
+
     -- Other
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
     { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },

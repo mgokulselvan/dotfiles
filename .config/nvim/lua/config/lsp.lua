@@ -1,0 +1,8 @@
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("clangd")
+vim.lsp.enable("pyright")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("eslint")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("jsonls")
+vim.lsp.enable("emmet_language_server")
