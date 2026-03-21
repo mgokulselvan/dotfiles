@@ -185,7 +185,7 @@
 		"interval": 1
 	},
 	"custom/notification":{
-		"format" : "  󰂚 ",
+		"format" : "󰂚",
 		"tooltip": true,
 		"tooltip-format": "Notifications",
 		"on-click":"swaync-client -t"

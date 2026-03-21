@@ -1,11 +1,12 @@
-@define-color background	rgba(40, 42, 54, 0.5);
+@define-color background	rgba(40, 42, 54, 0.85);
 @define-color orange	#ffb86c;
 @define-color gray	#44475a;
 @define-color black #21222c;
 @define-color red	#ff5555;
+@define-color white #ffffff;
 
 
-@define-color focused @gray;
+@define-color focused rgba(40, 42, 54, 0.85);
 @define-color critical	@red;
 * {
     /* `otf-font-awesome` `ttf-jetbrains-mono` is required to be installed for icons */
@@ -21,11 +22,11 @@ window#waybar {
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+  opacity: 0.9;
 }
 
 window#waybar.empty #window {
-  background-color: transparent;
+  background-color: @gray;
 }
 
 
@@ -34,7 +35,7 @@ window#waybar.empty #window {
   margin: 7px 0 0 7px;
   padding: 1px 3px 1px 3px;
   background-color: @background;
-  border: 2px solid @focused;
+  border: 2px solid @gray;
   border-radius:3px;
 }
 
@@ -42,7 +43,7 @@ window#waybar.empty #window {
   margin: 7px 0 0 0;
   padding: 1px 3px 1px 3px;
   background-color: @background;
-  border: 2px solid @focused;
+  border: 2px solid @gray;
   border-radius:3px;
 }
 
@@ -50,7 +51,7 @@ window#waybar.empty #window {
   margin: 7px 7px 0 0;
   padding: 1px 3px 1px 3px;
   background-color: @background;
-  border: 2px solid @focused;
+  border: 2px solid @gray;
   border-radius:3px;
 }
 
@@ -68,7 +69,8 @@ window#waybar.empty #window {
 #cpu:hover,
 #memory:hover,
 #temperature:hover{
-  color: @color1;
+	color:@gray;
+	background-color: @white;
 }
 /* workspace pannel */
 #workspaces button {
@@ -80,18 +82,29 @@ window#waybar.empty #window {
 }
 
 #workspaces button:hover {
-	color:@second-background;
-	background-color: @focused2;
+	color:@gray;
+	background-color: @white;
 }
 
 #workspaces button.active {
-  color: @focused2;
-  background-color: @second-background;
+	color:@white;
+	background-color: @black;
 }
 
 #workspaces button.urgent {
   background-color: @urgent;
 }
+
+/* Center Island */
+#clock,
+#custom-notification{
+	padding:0 10px;
+}
+#custom-notification:hover {
+	background-color: @white;
+	color:@gray;
+}
+
 
 /* Right Island */
 
@@ -111,16 +124,19 @@ window#waybar.empty #window {
 #wireplumber:hover,
 #battery:hover,
 #custom-power:hover{
-  color: @color1;
+	background-color:@white;
+  color: @gray;
 }
+
 #wireplumber.muted {
-  background-color: @color2;
+  background-color: @background;
+  color:@red;
 }
 
 #battery.charging,
 #battery.plugged {
-  background-color: @focused2 ;
-  color: @background;
+  color: @white;
+  background-color: @background ;
 }
 
 #battery.critical:not(.charging) {
