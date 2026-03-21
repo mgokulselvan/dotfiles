@@ -1,15 +1,19 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd
-unsetopt beep
-bindkey -v
-eval "$(starship init zsh)"
-export LS_COLORS="no=38;5;255:fi=38;5;255:di=38;5;245:ln=38;5;240:pi=38;5;240:so=38;5;240:do=38;5;240:bd=38;5;240:cd=38;5;240:or=38;5;240:mi=38;5;240:ex=38;5;250:su=38;5;240:sg=38;5;240:ca=38;5;240:tw=38;5;240:ow=38;5;240:st=38;5;240"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-unalias ls 2>/dev/null
-alias ls='command ls --color=auto'
+
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+
+# Lines configured by zsh-newuser-install
+bindkey -v
 # End of lines configured by zsh-newuser-install
 
 source ~/.zshrc.env
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
