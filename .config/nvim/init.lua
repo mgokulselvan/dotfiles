@@ -24,6 +24,4 @@ vim.opt.syntax = "on"
 require("config.lazy")
 require("config.lsp")
 
--- Set the colorscheme
---vim.cmd("colorscheme tokyonight")
-
+vim.cmd("colorscheme everforest")
